@@ -1,0 +1,60 @@
+/* Register.css */
+
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fbecf6;
+    text-align: center;
+}
+
+.register-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.register-container button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-container button:hover {
+    background-color: #45a049;
+}
+
+.register-container p {
+    color: #d9534f; /* Roșu pentru mesaje de eroare */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Fundal ușor diferit pentru Login */
+.login-container {
+    background-color: #fbecf6; /* Fundal albastru deschis */
+}
+
+
+

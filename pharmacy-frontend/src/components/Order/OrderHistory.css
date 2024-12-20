@@ -1,0 +1,57 @@
+/* OrderHistory.css */
+
+.order-history-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #fbecf6;
+
+}
+
+.order-history-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.order-history-container .error-message {
+    color: #d9534f;
+    font-size: 14px;
+}
+
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
+}
+
+.order-card h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.order-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.order-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.order-card li {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.order-card li span {
+    font-weight: bold;
+}
