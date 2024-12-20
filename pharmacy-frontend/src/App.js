@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; // Import pentru React și useState
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import pentru react-router-dom
+import React, { useState, useEffect } from 'react'; // Import pentru React și useState
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // Import pentru react-router-dom
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import ProductList from './components/Products/ProductList';
@@ -15,6 +15,9 @@ const App = () => {
   const [cart, setCart] = useState([]); // Produse din coș
   // const [userId, setUserId] = useState(localStorage.getItem('userId') || '');
 
+  useEffect(() => {
+    setUser(localStorage.getItem('userId')); // Verifică dacă userId există în localStorage
+  }, []);
 
   const addToCart = (product) => {
       const existingItem = cart.find((item) => item._id === product._id);
@@ -47,6 +50,14 @@ const App = () => {
       <Router>
           <Navbar /> {/* Navbar-ul este afișat pe toate paginile */}
           <Routes>
+          {!user ? (
+        <>
+            <Route path="/login" element={<Login setUser={setUser} />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="*" element={<Navigate to="/login" />} /> {/* Redirecționează către login */}
+        </>
+    ) : (
+        <>
               <Route path="/login" element={<Login setUser={setUser} />} />
               <Route path="/register" element={<Register />} />
               <Route path="/products" element={<ProductList addToCart={addToCart} />} />
@@ -63,8 +74,10 @@ const App = () => {
               />
               <Route path="/checkout" element={<Checkout cart={cart} clearCart={clearCart} userId={localStorage.getItem('userId')} />} />
               <Route path="/orders" element={<OrderHistory userId={localStorage.getItem('userId')} />} />
-          </Routes>
-      </Router>
+          </>
+    )}
+    </Routes>
+    </Router>
   );
 };
 
